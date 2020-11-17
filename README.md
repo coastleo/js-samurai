@@ -58,9 +58,9 @@ O Javascript moderno considera sete tipos de dados, sendo seis primitivos:
 ```
 - **null:** palavra chave que indica valor nulo, importante salientar que o JS é case-sensitive, ou seja, letras maiusculas e minusculas são diferenciadas.
 ```js
-null
-Null
-NULL
+null // yes
+Null // no
+NULL // no
 ```
 - **undefined:** quando uma variavel é declarada porém não é preenchida com nenhum valor (gaveta vazia)
 ```js
