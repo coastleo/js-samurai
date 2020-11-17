@@ -7,8 +7,8 @@ Este repositório tem o objetivo de trazer habilidades para que você possa mass
 ## Considerações inciais
 Este repositório não tem o objetivo de introduzir conceitos de lógica de programação ou abrir um conceito histórico e evolutivo desta linguagem maravilhosa. Então se você está dando os primeiros passos no fantástico (e sadomasoquista risos) universo da programação, deixarei logo em seguida uma lista de conteúdos iniciais interessantes.
 
- - História do Javascript by FireShip
- - Lógica de programação by XXX
+ - [História do Javascript by FireShip](https://fireship.io/courses/javascript/intro-history/)
+ - [Lógica de programação by 10 minutes Tech](https://www.youtube.com/watch?v=9zOo4JkZgSI)
 
 ## Feijão com Arroz
 
@@ -58,9 +58,9 @@ O Javascript moderno considera sete tipos de dados, sendo seis primitivos:
 ```
 - **null:** palavra chave que indica valor nulo, importante salientar que o JS é case-sensitive, ou seja, letras maiusculas e minusculas são diferenciadas.
 ```js
-null // yes
-Null // no
-NULL // no
+null
+Null
+NULL
 ```
 - **undefined:** quando uma variavel é declarada porém não é preenchida com nenhum valor (gaveta vazia)
 ```js
