@@ -105,3 +105,38 @@ console.log(usuario['nome']) // Leonardo
 ```
 
 Os objetos nos possibilitam acessar seu conteudo integralmente ou apenas uma das chaves. 
+
+#### Operadores
+Os operadores são representados por símbolos matemáticos, que tem o poder de produzir algum resultado baseado em dois ou mais valores (ou variáveis). 
+
+|Operador| Utilidade |  Simbolos|   Exemplo  |
+|--|--|--|--|
+| **Adição** | Usado para somar dois números ou juntar duas strings.  | `+` | `6 + 9`  ou `"Java" + "Script"` |
+|**Subtração, multiplição, divisão**|Fazem exatamente o que você espera que eles façam na matemática básica.|`-`, `*`, `/`|`9 - 3`, `9 * 3` , `9 / 3`|
+| **Atribuição** | Ela escreve um valor em uma variável. | `=` | `let variavel = "valor"` |
+| **Operador de igualdade** | Faz um teste para ver se dois valores são iguais, retornando um resultado true/false (booleano). | `===` | `7 === 6 // false` `6 === 6 // true` |
+| **Negação, não igual** | Retorna o valor lógico oposto do sinal; transforma um true em um false, etc. Quando usado junto com o operador de igualdade, o operador de negação testa se os valores são diferentes. |`!`, `!==`  | `!(7 === 6) // true` `6 !== 6 // false`  |
+
+> A negação resulta o valor contrário do boolean do operador de igualde, ou seja, se o valor do operador de igualde retorna true, a negação será false e vice versa. Já o Não igual é o contrário do valor de operação de igualde: `let variavelA`NÃO é igual a `let variavelB`
+
+#### Conversão de tipos de Dados
+Em expressões envolvendo valores numérico e string com o operador +, JavaScript converte valores numérico para strings. Por exemplo:
+```js
+x = "A resposta é " + 42 // "A resposta é 42"
+y = 42 + " é a resposta" // "42 é a resposta"
+```
+Nas declarações envolvendo outros operadores, JavaScript não converte valores numérico para strings. Por exemplo:
+```js
+"37" - 7 // 30
+"37" + 7 // "377"
+```
+Já para converter um valor de String para númerico existem duas possibilidades, transforma-lo em numero inteiro ou decimal. Outro método para que isso aconteça é colocar o operador `+` na frente de um valor de String.
+```js
+parseInt() // converte para inteiro
+parseFloat() // converte para decimal
+"1.1" + "1.1" = "1.11.1"
+(+"1.1") + (+"1.1") = 2.2   
+/* Os parênteses foram usados para deixar mais legível o código, 
+ele não é requirido.
+*/
+```
