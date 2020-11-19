@@ -128,7 +128,7 @@ y = 42 + " é a resposta" // "42 é a resposta"
 Nas declarações envolvendo outros operadores, JavaScript não converte valores numérico para strings. Por exemplo:
 ```js
 "37" - 7 // 30
-"37" + 7 // "377"
+"37" + 7 // "377" 
 ```
 Já para converter um valor de String para númerico existem duas possibilidades, transforma-lo em numero inteiro ou decimal. Outro método para que isso aconteça é colocar o operador `+` na frente de um valor de String.
 ```js
@@ -139,4 +139,53 @@ parseFloat() // converte para decimal
 /* Os parênteses foram usados para deixar mais legível o código, 
 ele não é requirido.
 */
+```
+
+### Strings 
+Como visto anteriormente, strings são uma tipagem de dado na qual o valor sempre é textual. No JavaScript existem alguns métodos para a manipulação deste tipo de dados especíificos.
+
+#### length
+Este método é utilizado quando é necessário saber a quandidade de caractetes e espaços em branco.
+
+```js
+let string = 'Aprendendo Javascript'
+string.length // 21
+```
+
+#### toUpperCase e toLowerCase
+Para transformar toda a sentença em letras mínusculas, é necessário usar o método toLowerCase, já para transforma-lo em maiusculo usamos o toUpperCase
+
+```js
+string.toLowerCase // aprendendo javascript
+string.toUpperCase // APRENDENDO JAVASCRIPT
+```
+
+#### indexOf
+Para encontrar o index, ou seja, encontrar qual é o número relativo a posição de terminado conjunto de caracteres, usamos o indexOf.
+
+```js
+string.indexOf('Javascript') // 11
+```
+> Caso seja informado algum cojunto ou caracter que existe em mais de uma posição, é retornado apenas a primeira vez que ele aparece no texto
+
+
+#### replace
+Este método tem o propósito de substituir determinado conjunto de caracteres A encontrado no texto em um conjunto B.
+
+```js
+let stringReplaced = string.replace('Javascript', 'Typescript')
+console.log(stringReplaced) // Aprendendo Typescript
+```
+
+#### slice
+Para recortar um pedaço da string, é usado o método slice, no qual retira o texto a partir de um index inicial e final informado.
+```js
+let linguagem = string.slice(11, 21) // Javascript
+```
+#### trim
+O método trim serve para retirar os espaços em branco no ínicio ou no final da string. Desta vez não é necessário informar nada como parametro.
+
+```js
+let stringTrim = '      Aprendendo Javascript              '
+stringTrim.tim() // Aprendendo Javascript
 ```
