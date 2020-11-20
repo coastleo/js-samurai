@@ -189,3 +189,173 @@ O método trim serve para retirar os espaços em branco no ínicio ou no final d
 let stringTrim = '      Aprendendo Javascript              '
 stringTrim.tim() // Aprendendo Javascript
 ```
+
+### Condicionais
+Como em qualquer linguagem de alto nível, há possibilidade de testar hipoteses e executar um bloco de código se a hipotese se for verdadeira, e outro bloco no caso contrário.
+
+```js
+if (true) {
+	console.log('Vai ser executado')	
+}
+
+if (false) {
+	console.log('Não vai ser executado')
+}
+```
+
+Para que sejá possível transformar o conteudo de dentro do parenteses seja igual a um valor booleano, será necessário criar uma expressão lógica.
+
+```js
+if (3 <= 4) {
+	console.log('3 <= 4')
+}
+```
+
+Algum valor em **string** apenas é reconhecido como um booleano `false` caso o texto esteja vazio.
+```js
+let semTexto = ''
+if (semTexto) {
+	console.log('Não vai ser executado')
+}
+
+// se negar o valor vazio, será revertido em true
+if (!semTexto) {
+	console.log('Vai ser executado')
+}
+```
+
+#### Cadeia de decições
+Além do `if` propriamente dito, existem duas possibilidades para encrementar a cadeia condicional. A primeira é o `else`, que é o bloco a ser executado caso o `if` seja negativo.
+
+```js
+if (semTexto) {
+	console.log('Não vai ser executado')
+} else {
+	console.log('Não vai ser executado')
+}
+```
+
+Também é possível usar o operador `else if`, o qual fica entre o `if` e o `else`, recebendo também um valor lógico.
+
+```js
+if (10 > 20) {
+	console.log('Não vai ser executado')
+} else if (10 <= 12) {
+	 console.log('Vai ser executado')
+} else {
+	console.log('Não vai ser executado')
+}
+```
+> É possível usar quantos else if você quiser, mas não é uma boa prática encher seu código de condicionais, mais tarde neste curso aprenderemos o que fazer para resolver problemas que dependem de várias condicionais.
+
+#### Ternários
+Os ternários são condicionais que cabem em apenas uma linha, seguindo uma sintaxe simples.
+
+```js
+console.log(true ? 'Programador' : 'Designer') // Programador
+console.log(false ? 'Programador' : 'Designer') // Designer
+```
+
+É necessário colocar uma expressão que resultará em um valor booleano e logo após o simbolo de ponto de interrogação, então colocamos o código que será executado caso o ternário sejá positivo, seguido pelo sinal de dois pontos e o código que será executado se o valor for negativo.
+
+
+### Array
+O array, também chamado de lista, é uma estrutura de dados (talvez a mais usada e conhecida), na qual tem a habilidade de guardar em si valores ou variáveis. O array é representado pelos simbolos de `[]`, e seus valores dispostos entre os colchetes e separados por virgula.
+
+```js
+let numeros = [5, 3, 12, 17, 10, 99]
+console.log(numeros) // [5, 3, 12, 17, 10, 99]
+```
+Para coletar apenas um valor dentro de um array, é necessário descobrir qual o index do item que você deseja extrair (lembrando que do mesmo modo que a string, o index incia com zero, e não com um).
+
+```js
+console.log(numeros[2]) // 12
+console.log(numeros[5]) // 99
+console.log(numeros[0]) // 5
+```
+
+Para descobrir quantos elementos existem dentro de um array, podemos usar o método length também.
+
+```js
+console.log(numeros.length) // 6
+```
+
+Para manipular os arrays, existem alguns métodos:
+
+#### pop
+O método pop é capaz de remover e retornar o ultimo item de um array.
+```js
+let numeroRetirado = numeros.pop()
+console.log(numeroRetirado) // 99
+console.log(numeros) // [5, 3, 12, 17, 10]
+```
+
+#### slice
+Da mesma forma que foi aprendido com a string, o método slice tem o poder de fatiar o array em várias partes, sendo informado o inicio do corte e o final (seguindo a mesma regra do index).
+
+```js
+console.log(numeros.slice(2, 5) // [12, 17, 10]
+let depoisDoIndex3 = numeros.slice(3) 
+console.log(depoisDoIndex2) // [17, 10]
+```
+#### join
+O método join é capaz de agrupar todos os valores de uma lista em uma string, sendo separados por determinado valor a ser informado como parametro.
+
+```js
+console.log(numeros.join('-')) // 5-3-12-17-10
+console.log(numeros.join(', ')) // 5, 3, 12, 17, 10
+```
+
+#### push
+O método push consegue adicionar um item no final do array, sendo informado este como parametro do método
+```js
+let usuario = [
+	'Fulano de Tal',
+	23,
+	'Programador',
+	2020,
+	'Brasileiro'
+]
+
+usuario.push('SC')
+console.log(usuario) // ['Fulano de Tal', 23, 'Programador', 2020, 'Brasileiro', 'SC']
+```
+
+#### incluse
+Incluse é um método que tem a capacidade de verificar se determinado valor está dentro do array ou não, retornando `true` ou `false` respectivamente.
+
+```js
+console.log(usuario.includes(2020)) // true
+console.log(usuario.includes('2020')) // false
+```
+
+#### indexOf
+O método indexOf consegue encontrar qual é o index da posição de um determinado item informado como parametro. Caso o valor não seja encontrado, é retornado -1.
+ 
+ ```js
+ console.log(usuario.indexOf(2020)) // 3
+ console.log(usuario.indexOf('2020')) // -1
+ ```
+
+#### concatenar arrays
+Podemos fazer de duas maneiras a concatenação. Sendo a primeira com o métoodo concat, sendo informado o array que será agrupado. Outra maneira (e mais simples) é o usar o spread.
+
+```js
+const cars = ['🚗', '🚙'];
+const trucks = ['🚚', '🚛'];
+
+// Concat
+const combined1 = [].concat(cars, trucks);
+
+// Spread
+const combined2 = [...cars, ...trucks];
+```
+
+#### resgatar valores e salvar em variáveis
+Para salvar valores indivisuais, podemos salvar um por um informando o index, porém o ECMAScript 6 trouxe uma atualização que simplifica esta tarefa.  Podemos declarar uma variavel que é um array, dentro dela colocar o nome da variavel que desejamos atribuir a um valor seguindo o mesmo index dos valores.
+
+```js
+let [ nome, idade, , , nacionalidade ] = usuario
+console.log(nome, idade, nacionalidade) // 'Fulano de tal', 23, 'Brasileiro'
+```
+> Note que os valores que não era necessário salvar em um varíavel devemos apenas ignorar e passar a virgula, informando que o valor encontrado em determinado index não será salvo em nenhuma variavel.
